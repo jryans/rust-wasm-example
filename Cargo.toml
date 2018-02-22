@@ -7,3 +7,4 @@ authors = ["J. Ryan Stinnett <jryans@gmail.com>"]
 crate-type = ["cdylib"]
 
 [dependencies]
+wasm-bindgen = { git = "https://github.com/alexcrichton/wasm-bindgen" }

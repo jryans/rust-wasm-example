@@ -1,14 +1,13 @@
-use std::os::raw::c_char;
-use std::ffi::{CStr, CString};
+#![feature(proc_macro)]
 
-fn main() {
-    // Defined in JS.
-}
+extern crate wasm_bindgen;
 
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
 #[no_mangle]
-pub fn add_bob(prefix: *const c_char) -> *mut c_char {
-    unsafe {
-        let prefix = CStr::from_ptr(prefix).to_string_lossy().into_owned();
-        CString::new(prefix + ", Bob!").unwrap().into_raw()
-    }
+pub extern fn add_bob(prefix: &str) -> String {
+    let mut bobed = prefix.to_string();
+    bobed.push_str(", Bob!");
+    bobed
 }
