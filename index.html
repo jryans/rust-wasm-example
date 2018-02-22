@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<script>
+  // var Module;
+  // function onRuntimeInitialized() {
+  //   window.add_bob = Module.cwrap("add_bob", "string", [ "string" ]);
+  //   console.log(add_bob("Hello"));
+  // }
+  // Module = {
+  //   wasmBinaryFile: "main.wasm",
+  //   onRuntimeInitialized,
+  // };
+  fetch("./target/wasm32-unknown-unknown/release/rust_wasm.wasm")
+    .then(r => r.arrayBuffer())
+    .then(r => WebAssembly.instantiate(r))
+    .then(module => {
+      console.log(module.instance.exports.add_bob("Hello"));
+    });
+</script>
+<!-- <script src="loader.js"></script> -->
