@@ -9,4 +9,3 @@ Append the following to rust_wasm_example.js:
 self.wasm_bindgen.loaded = self.wasm_bindgen("./rust_wasm_example_bg.wasm");
 export default self.wasm_bindgen;
 ```
-# wasm-gc...?
