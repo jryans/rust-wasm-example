@@ -74,7 +74,7 @@ __exports.__wbindgen_throw = function(ptr, len) {
                     function init(wasm_path) {
                         return fetch(wasm_path)
                             .then(response => response.arrayBuffer())
-                            .then(buffer => WebAssembly.instantiate(buffer, { './rust_wasm': __exports }))
+                            .then(buffer => WebAssembly.instantiate(buffer, { './rust_wasm_example': __exports }))
                             .then(({instance}) => {
                                 wasm = init.wasm = instance.exports;
                                 return;
@@ -83,5 +83,5 @@ __exports.__wbindgen_throw = function(ptr, len) {
                     self.wasm_bindgen = Object.assign(init, __exports);
                 })();
 
-self.wasm_bindgen.loaded = self.wasm_bindgen("./rust_wasm_bg.wasm");
-export default self.wasm_bindgen;
+                self.wasm_bindgen.loaded = self.wasm_bindgen("./rust_wasm_example_bg.wasm");
+                export default self.wasm_bindgen;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <script type="module">
-  import rustWasm from "./rust_wasm.js";
-  rustWasm.loaded.then(() => {
-    console.log(rustWasm.add_bob("Hello"));
+  import example from "./rust_wasm_example.js";
+  example.loaded.then(() => {
+    console.log(example.add_bob("Hello"));
   });
 </script>
