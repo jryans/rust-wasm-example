@@ -6,5 +6,8 @@ authors = ["J. Ryan Stinnett <jryans@gmail.com>"]
 [lib]
 crate-type = ["cdylib"]
 
+[profile.release]
+lto = true
+
 [dependencies]
 wasm-bindgen = "0.2"
